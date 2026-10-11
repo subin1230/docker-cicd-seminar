@@ -26,3 +26,10 @@ def database_health():
         raise HTTPException(status_code=503, detail="Database is unavailable") from None
 
     return {"database": "ok", "value": value}
+
+@app.get("/version")
+def version():
+    return {
+        "version": "v2",
+        "author": "박수빈",
+    }
